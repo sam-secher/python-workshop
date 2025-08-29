@@ -46,6 +46,16 @@ class PCS(Component):
     def calculate_q_demand(self, s_in: float) -> float:
         raise NotImplementedError
 
+class Converter(Component):
+    def component_name(self) -> str:
+        return "Converter"
+
+    def calculate_p_loss(self, s_in: float) -> float:
+        raise NotImplementedError
+
+    def calculate_q_demand(self, s_in: float) -> float:
+        raise NotImplementedError
+
 class Cable(Component):
     """Class to represent a cable."""
 

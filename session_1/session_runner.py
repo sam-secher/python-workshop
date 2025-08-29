@@ -45,7 +45,7 @@
 import math
 
 from common.constants import ComponentConstants
-from session_1.inheritance.system_components_abstracted import PCS, Cable, Component, Transformer
+from session_1.inheritance.system_components_abstracted import PCS, Cable, Component, Converter, Transformer
 
 
 class SessionRunner:
@@ -54,6 +54,7 @@ class SessionRunner:
 
     def _initialise_components(self) -> list[Component]:
         return [
+            Converter(0.995, "ENV-3450"),
             Cable(voltage_level=ComponentConstants.Cable.Voltage.LV_DC, material=ComponentConstants.Cable.Material.COPPER),
             PCS(0.99, "ENV-3450"),
             Cable(voltage_level=ComponentConstants.Cable.Voltage.LV_AC, material=ComponentConstants.Cable.Material.COPPER),
@@ -71,14 +72,19 @@ class SessionRunner:
         print(f"System:\n{system_repr}")
         print(f"DC to AC efficiency: {dc_to_ac_efficiency:.3g}")
 
+# Not covered (asked at start):
+# - Using properties for dynamically calculated values (Andrew)
+# - Deep-dive on current codebase and how we can improve it. Focus on augmentation code (Emerald)
+# - Perspectives on using AI tools in code (Cursor, browser LLMs). How much should we rely on them for code? For research?
+
 # Possible future sessions:
-# - Features of Python language (comprehensions, generators/iterators, set vs list vs tuple, dunder methods)
+# - Features of Python language (comprehensions, generators/iterators, set vs list vs tuple, dunder methods) *
 # - Paradigms of programming (functional, object-oriented, procedural, etc)
-# - Writing performant code (profiling, memory usage, vectorised operations with Pandas/NumPy etc)
+# - Writing performant code (profiling, memory usage, vectorised operations with Pandas/NumPy etc) * (Pandas)
 # - Web development (APIs, serverless functions, web frameworks, relational and non-relational databases)
 # - Back-end with AWS (Lambda, S3, Cognito, EC2)
 # - DevOps on GitHub (CI/CD, task boards, Actions, GitHub Pages, how to code review, repo policies)
 # - Event-driven architecture (producers/consumers, queues, message buses, data push services)
-# - Data science (Gradient descent, SVMs, neural networks, popular libraries)
+# - Data science (Gradient descent, SVMs, neural networks, popular libraries) *
 # - Data engineering (ETL, data pipelines, data lakes, data warehouses)
-# - Take-home challenges (refactoring tasks, small projects e.g. create a web dashboard, LeetCode/HackRank style problems)
+# - Take-home challenges (refactoring tasks, small projects e.g. create a web dashboard, LeetCode/HackerRank style problems) *
