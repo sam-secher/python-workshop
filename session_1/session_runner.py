@@ -1,9 +1,46 @@
+# Goals for this session:
+# 1. Understand some key features of OOP
+# 2. Learn how to use type hints to improve code readability and other good practice
+# 3. Understand how abstraction can be used to improve code maintainability
+
 # Setting up development environment
 
 # • IDE: VSCode / Cursor
 # • Extensions incl:
 #   - Linter (Ruff or Black + mypy), set as default formatter then SHIFT + ALT + F (demo on system_configuration.py)
 #   - .gitignore, pyproject.toml, launch.json, environment.yml
+# • Project structure
+
+# Object-oriented programming
+
+# • Fundamental principle is encapsulation of state and behaviour in an object (class instance)
+# • 'Class' is the blueprint for an object.
+# • 'Object' is an instance of a class.
+# • OOP is suitable for modelling large, complex systems and systems with many classes.
+# • Note: Some languages enforce OOP, e.g. Java, but Python isn't strictly object-oriented, as it supports functional, procedural and object-oriented programming.
+# • Functional and procedural are more suitable for modelling small, simple systems e.g. self-contained scripts.
+
+# • Languages that enforce OOP tend to be statically typed, which means variable type is declared and known at compile time.
+# • Python is dynamically typed, but can be made quasi-statically typed with type hints.
+# • Type hints are a way to annotate variables with their type.
+# • This significantly improves code readability and error detection.
+# • Type hints are not enforced at runtime, so they are only a suggestion.
+# • Linters e.g. Ruff and mypy can be configured to enforce (or strongly encourage) type hints.
+# • Most popular libraries (e.g. Pandas, NumPy) have supporting stubs packages which can be used to type check code.
+
+# • As well as type hints, we can improve code with:
+#   - Docstrings
+#   - Constants defined in a separate file instead of magic numbers
+#   - Short, self-contained functions
+#   - Access modifiers which indicate whether a method is public, protected or private (not enforced in Python, but good practice)
+
+# • A core feature of OOP is abstraction, which provides an interface for classes that expose what an object can do (its contract) and hides its implementation.
+#   - Inheritance allows a class to inherit attributes and methods from another class or interface.
+#   - This decouples callers of the class/its functions/properties from implementation, which allows for safer refactors and extensibility.
+#   - E.g. consider an abstract class that defines an interface for shapes, with a method to calculate the area.
+#   - A square, circle and triangle can all inherit from this abstract class and implement the area method.
+#   - This allows a caller to calculate the area of a collection of shapes without knowing the specific shape type.
+#   - Note: Over-abstraction can lead to code that is difficult to understand and maintain, a balance is needed.
 
 import math
 
