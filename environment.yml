@@ -1,0 +1,11 @@
+name: training-workshop
+channels:
+  - conda-forge
+  - https://conda.anaconda.org/gurobi
+  - defaults
+dependencies:
+  - pandas
+  - pandas-stubs
+  - ruff
+  - mypy
+prefix: C:\Users\sam.secher\AppData\Local\anaconda3\envs\training-workshop
